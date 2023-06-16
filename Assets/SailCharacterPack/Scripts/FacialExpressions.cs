@@ -18,19 +18,13 @@ public class FacialExpressions : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void Update () 
+	{
 		// This is hardcoded to set the correct face based on the Animator state
 		AnimatorStateInfo animState = animator.GetCurrentAnimatorStateInfo (0);
 
 		if (animState.IsName ("Idle"))
 			uvOffset = new Vector2(0, 0);
-		else if (animState.IsName ("Happy"))
-			uvOffset = new Vector2(0.25f, 0);
-		else if (animState.IsName ("Sad"))
-			uvOffset = new Vector2(0, -0.25f);
-		else
-			uvOffset = new Vector2(0.25f, -0.25f);
-
-		faceMaterial.SetTextureOffset ("_MainTex", uvOffset);
+		
 	}
 }
